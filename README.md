@@ -1,1 +1,1 @@
-# Game by Pivo <T> eam
+# Game by Pivo(T)eam
