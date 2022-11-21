@@ -9,11 +9,7 @@ public abstract class WeaponBase : MonoBehaviour, IPlayerWeapon
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out EnemyAbstract enemy))
-        {
-            enemy.TakeHit(damage);
-            col.enabled = false;
-        }
+        HitTarget(other);
     }
 
     private void OnTriggerExit(Collider other)
@@ -23,6 +19,10 @@ public abstract class WeaponBase : MonoBehaviour, IPlayerWeapon
 
     public void HitTarget(Collider other)
     {
-
+        if (other.TryGetComponent(out EnemyAbstract enemy))
+        {
+            enemy.TakeHit(damage);
+            col.enabled = false;
+        }
     }
 }

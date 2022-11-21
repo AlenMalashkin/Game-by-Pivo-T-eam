@@ -46,7 +46,7 @@ public class HealthBar : MonoBehaviour
             return;
         }      
 
-        for (int i = maxHealth - 1; i > currentHealth; i--)
+        for (int i = maxHealth - 1; i > currentHealth - 1; i--)
         {
             healthBar[i].sprite = emptyHealthPrefab;
         }
