@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e7e515f6becbf546a6531b05426c014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  count: {fileID: 11400000, guid: 5e67438875148374694fd3bbf2c3c4ac, type: 2}
   _devilPrefab: {fileID: 4997986142056245513}
   _container: {fileID: 134477814}
   _autoExpand: 1
@@ -1972,7 +1973,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7524443149849183286, guid: eeddde91e624e384f8b494959528f2c0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13606033
+      value: -0.12743977
       objectReference: {fileID: 0}
     - target: {fileID: 7524443149849183286, guid: eeddde91e624e384f8b494959528f2c0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2098,7 +2099,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 996139477}
   m_LocalRotation: {x: 0.09332637, y: 0, z: 0, w: 0.99563557}
-  m_LocalPosition: {x: -0.13606033, y: 1.6661795, z: -14.76063}
+  m_LocalPosition: {x: -0.12743977, y: 1.6661795, z: -14.76063}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2267,6 +2268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c66ff182513ad60438624aff4fb7e000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  count: {fileID: 11400000, guid: 5e67438875148374694fd3bbf2c3c4ac, type: 2}
   _skeletonPrefab: {fileID: 167743158}
   _container: {fileID: 1039969697}
   _autoExpand: 1
@@ -2327,6 +2329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 307a04745b8a19449880e4bf9798c070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  count: {fileID: 11400000, guid: 5e67438875148374694fd3bbf2c3c4ac, type: 2}
   _zombiePrefab: {fileID: 3204211615366610407, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
   _container: {fileID: 1080662767}
   _autoExpand: 1
@@ -2375,6 +2378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cfdc62fba3a7e247990852939ea6b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  count: {fileID: 11400000, guid: 5e67438875148374694fd3bbf2c3c4ac, type: 2}
   _bullPrefab: {fileID: 3564054314180222820, guid: ac8d6828ee3f8084a962d2ea12a31eff, type: 3}
   _container: {fileID: 1437348310}
   _autoExpand: 1
@@ -2401,6 +2405,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1714254546}
+  - component: {fileID: 1714254547}
   m_Layer: 0
   m_Name: Spawners
   m_TagString: Untagged
@@ -2423,48 +2428,16 @@ Transform:
   - {fileID: 1437348310}
   - {fileID: 134477814}
   - {fileID: 1039969697}
-  - {fileID: 1838145213}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1838145212
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1838145213}
-  - component: {fileID: 1838145214}
-  m_Layer: 0
-  m_Name: SpawnSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1838145213
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838145212}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1714254546}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1838145214
+--- !u!114 &1714254547
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838145212}
+  m_GameObject: {fileID: 1714254545}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7dbd4da93b704a489d22bed026b951c, type: 3}

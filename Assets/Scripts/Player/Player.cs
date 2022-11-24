@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        CursorEnabler.Instance.DisableCursor();
         playerInput = GetComponent<PlayerInput>();
         playerMotion = GetComponent<PlayerMotion>();
         cameraHandler = FindObjectOfType<CameraHandler>();

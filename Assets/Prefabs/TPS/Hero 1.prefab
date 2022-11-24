@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b34d818a1bdfe7a4cbaa9a457e4c7020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 2741830500806743793, guid: 8b120613149442d4b9f89e5eef76921b, type: 3}
 --- !u!114 &1538945613434997092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc3d56635045254e97c482744db99bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 2741830500806743793, guid: 8b120613149442d4b9f89e5eef76921b, type: 3}
 --- !u!114 &1538945613434997093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc3371b6cadb8bb46abd87df7dc86ae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 2741830500806743793, guid: 8b120613149442d4b9f89e5eef76921b, type: 3}
 --- !u!114 &1538945613434997094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06951d5a1f0e14d4da13daa0f94dc05c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 2741830500806743793, guid: 8b120613149442d4b9f89e5eef76921b, type: 3}
   _gravity: -3.17
   canMove: 1
   movementSpeed: 7
@@ -365,7 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53babacce893d514babc6b27bc00e815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 2741830500806743793, guid: 8b120613149442d4b9f89e5eef76921b, type: 3}
   weaponCollider: {fileID: 5282028940281806204}
 --- !u!114 &3730056994000059633
 MonoBehaviour:
@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b16f64ffbcf6c94880e7419fa2cf78a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 2741830500806743793, guid: 8b120613149442d4b9f89e5eef76921b, type: 3}
   _maxHealth: 10
 --- !u!1 &1774160167288599611
 GameObject:
