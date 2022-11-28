@@ -9,6 +9,7 @@ public class Devil : EnemyAbstract
     private Animator anim;
     private Player player;
     private NavMeshAgent navAgent;
+    private DevilSFX devilSFX;
 
     private float distance;
 
@@ -16,6 +17,7 @@ public class Devil : EnemyAbstract
     {
         navAgent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        devilSFX = GetComponent<DevilSFX>();
         player = FindObjectOfType<Player>();
     }
 
@@ -56,7 +58,7 @@ public class Devil : EnemyAbstract
     {
         enemyBehaviourMap = new Dictionary<Type, IEnemyBehaviour>();
 
-        enemyBehaviourMap[typeof(IdleDevilBehaviour)] = new IdleDevilBehaviour(this);
+        enemyBehaviourMap[typeof(IdleDevilBehaviour)] = new IdleDevilBehaviour(this, devilSFX);
         enemyBehaviourMap[typeof(ChaseDevilBehaviour)] = new ChaseDevilBehaviour(this);
         enemyBehaviourMap[typeof(AttackDeveilBehaviour)] = new AttackDeveilBehaviour(this);
         enemyBehaviourMap[typeof(DieDevilBehaviour)] = new DieDevilBehaviour(this);
@@ -72,7 +74,7 @@ public class Devil : EnemyAbstract
 
     public override void SetEnemyBehaviourByDefault()
     {
-        SetChaseEnemyBehaviour();
+        SetIdleEnemyBehaviour();
     }
 
     public void SetIdleEnemyBehaviour()
@@ -128,6 +130,6 @@ public class Devil : EnemyAbstract
         navAgent.enabled = false;
         this.enabled = false;
         anim.SetTrigger("Die");
-        Destroy(gameObject, 3);
+        Destroy(gameObject, 7);
     }
 }

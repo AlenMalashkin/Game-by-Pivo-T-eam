@@ -6,10 +6,12 @@ public abstract class WeaponBase : MonoBehaviour, IPlayerWeapon
 {
     [SerializeField] private int damage;
     [SerializeField] private Collider col;
+    [SerializeField] private PlayerSFX playerSFX;
 
     private void OnTriggerEnter(Collider other)
     {
         HitTarget(other);
+        playerSFX.PlayAttackSFX();
     }
 
     private void OnTriggerExit(Collider other)

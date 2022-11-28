@@ -3,10 +3,12 @@ using UnityEngine;
 public class ZombieChaseBehaviour : IEnemyBehaviour
 {
     private Zombie _zombie;
+    private ZombieSFX _zombieSFX;
 
-    public ZombieChaseBehaviour(Zombie zombie)
+    public ZombieChaseBehaviour(Zombie zombie, ZombieSFX zombieSFX)
     {
         _zombie = zombie;
+        _zombieSFX = zombieSFX;
     }
 
     public void EnterState()

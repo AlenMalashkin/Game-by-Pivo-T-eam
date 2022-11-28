@@ -12,6 +12,7 @@ public class Zombie : EnemyAbstract
     private Animator anim;
     private Player player;
     private NavMeshAgent navAgent;
+    private ZombieSFX zombieSFX;
 
     private float distance;
 
@@ -19,6 +20,7 @@ public class Zombie : EnemyAbstract
     {
         navAgent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        zombieSFX = GetComponent<ZombieSFX>();
         player = FindObjectOfType<Player>();
     }
 
@@ -59,10 +61,10 @@ public class Zombie : EnemyAbstract
     {
         enemyBehaviourMap = new Dictionary<Type, IEnemyBehaviour>();
 
-        enemyBehaviourMap[typeof(ZombieIdleBehaviour)] = new ZombieIdleBehaviour(this);
-        enemyBehaviourMap[typeof(ZombieChaseBehaviour)] = new ZombieChaseBehaviour(this);
-        enemyBehaviourMap[typeof(ZombieAttackBehaviour)] = new ZombieAttackBehaviour(this);
-        enemyBehaviourMap[typeof(ZombieDieBehaviour)] = new ZombieDieBehaviour(this);
+        enemyBehaviourMap[typeof(ZombieIdleBehaviour)] = new ZombieIdleBehaviour(this, zombieSFX);
+        enemyBehaviourMap[typeof(ZombieChaseBehaviour)] = new ZombieChaseBehaviour(this, zombieSFX);
+        enemyBehaviourMap[typeof(ZombieAttackBehaviour)] = new ZombieAttackBehaviour(this, zombieSFX);
+        enemyBehaviourMap[typeof(ZombieDieBehaviour)] = new ZombieDieBehaviour(this, zombieSFX);
     }
 
     public override void Die()

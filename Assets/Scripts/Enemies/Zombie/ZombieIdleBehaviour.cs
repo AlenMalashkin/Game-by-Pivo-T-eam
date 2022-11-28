@@ -3,10 +3,12 @@ using UnityEngine;
 public class ZombieIdleBehaviour : IEnemyBehaviour
 {
     private Zombie _zombie;
+    private ZombieSFX _zombieSFX;
 
-    public ZombieIdleBehaviour(Zombie zombie)
+    public ZombieIdleBehaviour(Zombie zombie, ZombieSFX zombieSFX)
     {
         _zombie = zombie;
+        _zombieSFX = zombieSFX;
     }
 
     public void EnterState()
@@ -17,7 +19,7 @@ public class ZombieIdleBehaviour : IEnemyBehaviour
 
     public void ExitState()
     {
-        //Debug.Log("Exit IDLE State");
+        //_zombieSFX.PlayIdleSFX();
     }
 
     public void UpdateState()

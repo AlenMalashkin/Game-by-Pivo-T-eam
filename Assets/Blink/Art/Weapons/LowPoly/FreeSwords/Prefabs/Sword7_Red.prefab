@@ -108,3 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91284fa9ad46a0f44aa4eb3aeca1e6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1
+  col: {fileID: 0}
+  playerSFX: {fileID: 0}
