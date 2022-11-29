@@ -25,6 +25,11 @@ public class PlayerAttack : MonoBehaviour
         playerMotion = GetComponent<PlayerMotion>();
     }
 
+    public void ChangeWeaponCollider(Collider col)
+    {
+        weaponCollider = col;
+    }
+
     public void EnableWeaponCollider()
     {
         weaponCollider.enabled = true;
