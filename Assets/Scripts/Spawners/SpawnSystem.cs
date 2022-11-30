@@ -30,5 +30,34 @@ public class SpawnSystem : MonoBehaviour
                 spawner.Spawn();
             }
         }
+
+        StartCoroutine(EnemyAliveCheckRoutine());
+    }
+
+    private void CheckEnemiesAlive()
+    {
+        int spawnersEnd = 0;
+
+        foreach (var spawner in _spawners)
+        {
+            if (spawner.CheckEnemiesRemain())
+                spawnersEnd += 1;
+
+            Debug.Log(spawnersEnd);
+
+            if (spawnersEnd == 4)
+            {
+                Debug.Log("EndGame");
+            }
+        }
+    }
+
+    private IEnumerator EnemyAliveCheckRoutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(3);
+            CheckEnemiesAlive();
+        }     
     }
 }

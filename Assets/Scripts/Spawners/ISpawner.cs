@@ -6,4 +6,5 @@ public interface ISpawner
 {
     void Spawn();
     int GetEnemiesRemain();
+    bool CheckEnemiesRemain();
 }

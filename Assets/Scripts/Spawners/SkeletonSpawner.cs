@@ -27,4 +27,14 @@ public class SkeletonSpawner : MonoBehaviour, ISpawner
     {
         return count.skeletonCount;
     }
+
+    public bool CheckEnemiesRemain()
+    {
+        if (transform.childCount == 0 || !transform.GetChild(0).gameObject.activeInHierarchy)
+        {
+            return true;
+        }
+
+        return false;
+    }
 }
