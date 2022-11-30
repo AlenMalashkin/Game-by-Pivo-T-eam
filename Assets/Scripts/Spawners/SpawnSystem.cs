@@ -1,15 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 
 public class SpawnSystem : MonoBehaviour
 {
-    //[SerializeField] private ZombieSpawner _zombieSpawner;
-    //[SerializeField] private SkeletonSpawner _skeletonSpawner;
-    //[SerializeField] private DevilSpawner _devilSpawner;
-    //[SerializeField] private BullSpawner _bullSpawner;
-
     private List<ISpawner> _spawners;
 
     private void Awake()
@@ -47,7 +43,7 @@ public class SpawnSystem : MonoBehaviour
 
             if (spawnersEnd == 4)
             {
-                Debug.Log("EndGame");
+                SceneManager.LoadScene(0);
             }
         }
     }

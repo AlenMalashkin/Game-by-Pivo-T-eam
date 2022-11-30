@@ -13,6 +13,11 @@ public class EquipItem : MonoBehaviour
         {
             ActivateEquippedItem();
         }
+        else
+        {
+            PlayerPrefs.SetInt("EquippedItem", 0);
+            ActivateEquippedItem();
+        }
     }
 
     public void ActivateEquippedItem()

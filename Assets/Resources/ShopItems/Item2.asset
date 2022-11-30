@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemId: 1
   _itemDamage: 'Damage: 2'
-  _itemImage: {fileID: 21300000, guid: cdb88fdb0cf46b244a667edaff21c7df, type: 3}
+  _itemImage: {fileID: 21300000, guid: 7cd7dadd7a0809d42b8688dd07970cb1, type: 3}
