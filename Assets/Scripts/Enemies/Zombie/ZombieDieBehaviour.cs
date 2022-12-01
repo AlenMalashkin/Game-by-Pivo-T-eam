@@ -5,15 +5,17 @@ using UnityEngine;
 public class ZombieDieBehaviour : IEnemyBehaviour
 {
     private Zombie _zombie;
+    private ZombieSFX _zombieSFX;
 
-    public ZombieDieBehaviour(Zombie zombie)
+    public ZombieDieBehaviour(Zombie zombie, ZombieSFX zombieSFX)
     {
         _zombie = zombie;
+        _zombieSFX = zombieSFX;
     }
 
     public void EnterState()
     {
-        //Debug.Log("Enter Die State");
+        //_zombieSFX.PlayDieSFX();
     }
 
     public void ExitState()

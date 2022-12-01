@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2133810222149504738}
   - component: {fileID: 3040785727729074503}
   - component: {fileID: 997544894451840397}
+  - component: {fileID: 809601704198893503}
+  - component: {fileID: 3288339132261782766}
   m_Layer: 0
   m_Name: Sword12_Red
   m_TagString: Untagged
@@ -55,6 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -79,3 +82,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &809601704198893503
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645786095522272344}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.35783148, y: 1.699997, z: 0.17484349}
+  m_Center: {x: -0.000000064003004, y: 0.6251239, z: -0.00000028729514}
+--- !u!114 &3288339132261782766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645786095522272344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91284fa9ad46a0f44aa4eb3aeca1e6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  col: {fileID: 809601704198893503}
+  playerSFX: {fileID: 0}

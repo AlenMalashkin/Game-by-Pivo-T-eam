@@ -1,49 +1,59 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 
 public class SpawnSystem : MonoBehaviour
 {
-    [SerializeField] private ZombieSpawner _zombieSpawner;
-    [SerializeField] private SkeletonSpawner _skeletonSpawner;
-    [SerializeField] private DevilSpawner _devilSpawner;
-    [SerializeField] private BullSpawner _bullSpawner;
-
-    private int zombieEnemiesRemain = 2;
-    private int skeletonEnemiesRemain = 2;
-    private int devilEnemiesRemain = 2;
-    private int bullEnemiesRemain = 2;
+    private List<ISpawner> _spawners;
 
     private void Awake()
     {
+        _spawners = new List<ISpawner>();
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            _spawners.Add(transform.GetChild(i).GetComponent<ISpawner>());
+        }
     }
 
     private void Start()
     {
-        for (int i = 0; i < zombieEnemiesRemain; i++)
+        foreach (var spawner in _spawners)
         {
-            Spawn(_zombieSpawner.SpawnZombie);
+            for (int i = 0; i < spawner.GetEnemiesRemain(); i++)
+            {
+                spawner.Spawn();
+            }
         }
 
-        for (int i = 0; i < skeletonEnemiesRemain; i++)
-        {
-            Spawn(_skeletonSpawner.SpawnSkeleton);
-        }
+        StartCoroutine(EnemyAliveCheckRoutine());
+    }
 
-        for (int i = 0; i < devilEnemiesRemain; i++)
-        {
-            Spawn(_devilSpawner.SpawnDevil);
-        }
+    private void CheckEnemiesAlive()
+    {
+        int spawnersEnd = 0;
 
-        for (int i = 0; i < bullEnemiesRemain; i++)
+        foreach (var spawner in _spawners)
         {
-            Spawn(_bullSpawner.SpawnBull);
+            if (spawner.CheckEnemiesRemain())
+                spawnersEnd += 1;
+
+            Debug.Log(spawnersEnd);
+
+            if (spawnersEnd == 4)
+            {
+                SceneManager.LoadScene(1);
+            }
         }
     }
 
-    private void Spawn(Action Action)
+    private IEnumerator EnemyAliveCheckRoutine()
     {
-        Action();
+        while (true)
+        {
+            yield return new WaitForSeconds(3);
+            CheckEnemiesAlive();
+        }     
     }
 }

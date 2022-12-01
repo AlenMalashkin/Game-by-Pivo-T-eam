@@ -2,22 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BullSpawner : MonoBehaviour
+public class BullSpawner : MonoBehaviour, ISpawner
 {
     [SerializeField] private BossBull _bullPrefab;
     [SerializeField] private Transform _container;
     [SerializeField] private bool _autoExpand = false;
-
+    
+    private CountEnemiesOnLevel count;
     private PoolEnemies<BossBull> poolEnemies;
 
     private void Awake()
     {
+        count = Resources.Load<CountEnemiesOnLevel>($"LevelController/{PlayerPrefs.GetString("Level")}");
         poolEnemies = new PoolEnemies<BossBull>(_bullPrefab, 3, _container);
         poolEnemies.autoExpand = _autoExpand;
     }
 
-    public void SpawnBull()
+    public void Spawn()
     {
         poolEnemies.GetFreeElement();
+    }
+
+    public int GetEnemiesRemain()
+    {
+        return count.bullCount;
+    }
+
+    public bool CheckEnemiesRemain()
+    {
+        if (transform.childCount == 0 || !transform.GetChild(0).gameObject.activeInHierarchy)
+        {
+            return true;
+        }
+
+        return false;
     }
 }

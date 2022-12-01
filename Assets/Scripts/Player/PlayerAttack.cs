@@ -21,8 +21,12 @@ public class PlayerAttack : MonoBehaviour
 
     private void Awake()
     {
-        weaponCollider = weaponCollider.GetComponent<Collider>();
         playerMotion = GetComponent<PlayerMotion>();
+    }
+
+    public void ChangeWeaponCollider(Collider col)
+    {
+        weaponCollider = col;
     }
 
     public void EnableWeaponCollider()

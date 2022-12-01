@@ -6,15 +6,18 @@ public abstract class WeaponBase : MonoBehaviour, IPlayerWeapon
 {
     [SerializeField] private int damage;
     [SerializeField] private Collider col;
+    [SerializeField] private PlayerSFX playerSFX;
 
     private void OnTriggerEnter(Collider other)
     {
         HitTarget(other);
+        playerSFX.PlayAttackSFX();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        col.enabled = true;
+        if (gameObject.activeInHierarchy)
+            col.enabled = true;
     }
 
     public void HitTarget(Collider other)
@@ -22,7 +25,8 @@ public abstract class WeaponBase : MonoBehaviour, IPlayerWeapon
         if (other.TryGetComponent(out EnemyAbstract enemy))
         {
             enemy.TakeHit(damage);
-            col.enabled = false;
+            if (gameObject.activeInHierarchy)
+                col.enabled = false;
         }
     }
 }

@@ -5,14 +5,17 @@ using UnityEngine;
 public class IdleBullBehaviour : IEnemyBehaviour
 {
     private BossBull _component;
+    private BullSFX _bullSFX;
 
-    public IdleBullBehaviour(BossBull component)
+    public IdleBullBehaviour(BossBull component, BullSFX bullSFX)
     {
         _component = component;
+        _bullSFX = bullSFX;
     }
 
     public void EnterState()
     {
+        _bullSFX.PlayIdleSFX();
     }
 
     public void ExitState()

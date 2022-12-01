@@ -9,6 +9,7 @@ public class BossBull : EnemyAbstract
     private Animator anim;
     private Player player;
     private NavMeshAgent navAgent;
+    private BullSFX bullSFX;
 
     private float distance;
 
@@ -16,6 +17,7 @@ public class BossBull : EnemyAbstract
     {
         navAgent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        bullSFX = GetComponent<BullSFX>();
         player = FindObjectOfType<Player>();
     }
 
@@ -56,7 +58,7 @@ public class BossBull : EnemyAbstract
     {
         enemyBehaviourMap = new Dictionary<Type, IEnemyBehaviour>();
 
-        enemyBehaviourMap[typeof(IdleBullBehaviour)] = new IdleBullBehaviour(this);
+        enemyBehaviourMap[typeof(IdleBullBehaviour)] = new IdleBullBehaviour(this, bullSFX);
         enemyBehaviourMap[typeof(RunBullBehaviour)] = new RunBullBehaviour(this);
         enemyBehaviourMap[typeof(AttackBullBeahviour)] = new AttackBullBeahviour(this);
         enemyBehaviourMap[typeof(DieBullBehaviour)] = new DieBullBehaviour(this);
@@ -72,7 +74,7 @@ public class BossBull : EnemyAbstract
 
     public override void SetEnemyBehaviourByDefault()
     {
-        SetChaseEnemyBehaviour();
+        SetIdleEnemyBehaviour();
     }
 
     public void SetIdleEnemyBehaviour()
