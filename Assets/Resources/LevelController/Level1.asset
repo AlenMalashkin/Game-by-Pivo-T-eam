@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb353dddf8381504abfee792aae2d670, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
-  _zombieCount: 3
+  _zombieCount: 2
   _devilCount: 0
   _bullCount: 0
   _skeletonCount: 0

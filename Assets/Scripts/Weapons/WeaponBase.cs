@@ -16,7 +16,8 @@ public abstract class WeaponBase : MonoBehaviour, IPlayerWeapon
 
     private void OnTriggerExit(Collider other)
     {
-        col.enabled = true;
+        if (gameObject.activeInHierarchy)
+            col.enabled = true;
     }
 
     public void HitTarget(Collider other)
@@ -24,7 +25,8 @@ public abstract class WeaponBase : MonoBehaviour, IPlayerWeapon
         if (other.TryGetComponent(out EnemyAbstract enemy))
         {
             enemy.TakeHit(damage);
-            col.enabled = false;
+            if (gameObject.activeInHierarchy)
+                col.enabled = false;
         }
     }
 }

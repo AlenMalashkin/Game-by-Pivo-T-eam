@@ -43,7 +43,7 @@ public class SpawnSystem : MonoBehaviour
 
             if (spawnersEnd == 4)
             {
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(1);
             }
         }
     }

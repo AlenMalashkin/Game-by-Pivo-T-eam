@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8039479310580020524}
   - component: {fileID: 5221080027720417766}
   - component: {fileID: 6080775794472867322}
+  - component: {fileID: 6340976821789685506}
   m_Layer: 0
   m_Name: Sword7_Red
   m_TagString: Untagged
@@ -94,6 +95,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91284fa9ad46a0f44aa4eb3aeca1e6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
-  col: {fileID: 0}
+  damage: 3
+  col: {fileID: 6340976821789685506}
   playerSFX: {fileID: 0}
+--- !u!65 &6340976821789685506
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013990982369288243}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4671144, y: 1.8165458, z: 0.28935787}
+  m_Center: {x: -0.0007416087, y: 0.6486719, z: -0.00022015609}

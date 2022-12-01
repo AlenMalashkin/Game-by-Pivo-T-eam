@@ -8,6 +8,6 @@ public class FightArenaPanel : MonoBehaviour
     public void LoadArena(string name)
     {
         PlayerPrefs.SetString("Level", name);
-        SceneManager.LoadScene(1);   
+        SceneManager.LoadScene(2);   
     }
 }
